@@ -20,7 +20,7 @@ class NewsScrapper{
 
       List<String> names = result.map((e) => e.querySelector(".tec--card__title__link") == null ? "No name" : e.querySelector(".tec--card__title__link")!.text ?? "No name" ).toList();
       List<String> links = result.map((e) => e.querySelector(".tec--card__title__link") == null ? TECH_MUNDO_URL : e.querySelector(".tec--card__title__link")!.href ?? TECH_MUNDO_URL).toList();
-      List<String> images = result.map((e) => e.querySelector(".tec--card__thumb__image") == null ? "No image" : e.querySelector(".tec--card__title__link")!.href ?? "No image").toList();
+      List<String> images = result.map((e) => e.querySelector(".tec--card__thumb__image") == null ? "No image" : e.querySelector(".tec--card__thumb__image")!.src ?? "No image").toList();
 
       for(int i = 0;i < result.length; i++){
         techmundo_news.add(
